@@ -4,8 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:iot_project/pages/dashBoard_screen.dart';
 import 'package:jwt_decoder/jwt_decoder.dart';
 import 'devices_pages.dart';
-import 'package:http/http.dart' as http;
-import 'package:iot_project/pages/config.dart';
 import 'package:iot_project/data/data.dart';
 class NavigationRailPage extends StatefulWidget {
  final token;
@@ -50,29 +48,6 @@ class _NavigationRailPageState extends State<NavigationRailPage> {
   int _selectedIndex = 0;
   
   late String username; 
-  /*Future<List<dynamic>> fetchTemp() async {
-    final response = await http.get(Uri.parse(Temp));
-    if (response.statusCode == 200) {
-      return json.decode(response.body);
-    } else {
-      throw Exception('Failed to load data');
-    }
-  }
-
-  @override
-  void initState() {
-    super.initState();
-    fetchTemperatureData().then((data) {
-      setState(() {
-        for (var i = 0; i < data.length; i++) {
-          analyticData[2].count = data[i]['value'].toString();
-          // update the Temperature count with each received value
-        }
-      });
-    });
-  }*/
-
-
   @override 
   void initState() {
     super.initState();

@@ -17,5 +17,7 @@ router.get('/gas', DeviceController.getValueByIndicatorLast1);
 router.get('/water', DeviceController.getValueByIndicatorLast2);
 //energy
 router.get('/energy', DeviceController.getValueByIndicatorLast3);
+//Level
+router.get('/level', DeviceController.getValueByIndicatorLast4);
 module.exports = router;
 

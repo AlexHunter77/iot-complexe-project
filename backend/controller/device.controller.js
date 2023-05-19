@@ -21,7 +21,7 @@ exports.getAllById = async (req, res) => {
   };*/
   exports.getValueByIndicatorLast = async (req, res) => {
     const results = await device.find({ meteorological_indicator: 'Temperature Degree Centigrade (°C)' });
-    const value = results[40].value;
+    const value = results[9].value;
     res.send(`${value}` + '   C°') ;
 
 
@@ -44,23 +44,32 @@ exports.getValueByIndicatorLast1 = async (req, res) => {
   const results1 = await device.find({ meteorological_indicator: 'Gas m3' });
   const value1 = results1[6].value;
   res.send(`${value1}` + '   m3') ;
+  
 
 
   };
 
   exports.getValueByIndicatorLast2 = async (req, res) => {
-    const results2 = await device.find({ meteorological_indicator: 'Water L' });
-    const value2 = results2[2].value;
-    res.send(`${value2}` + '   Liter') ;
+    const results2= await device.find({ meteorological_indicator: 'Water L' });
+    const values2 = results2[2].value;
+    res.send(`${values2}` + '   Liter') ;
+    
   
   
     };
     
     exports.getValueByIndicatorLast3 = async (req, res) => {
-      const results3 = await device.find({ meteorological_indicator: 'Power W' });
-      const value3 = results3[1].value;
+      const results = await device.find({ meteorological_indicator: 'Power  kWh' });
+      const value3 = results[1].value;
       res.send(`${value3}` + '   kWh') ;
+  
     
       };
+
+      exports.getValueByIndicatorLast4 = async (req, res) => {
+        const results = await device.find({ meteorological_indicator: 'Level' });
+        const values = results[1].value;
+        res.send(`${values}`) ;      
+        };
   
       

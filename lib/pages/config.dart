@@ -13,3 +13,5 @@ final lastGas = url + 'gas?indicator =Gas m3';
 final lastLit = url + 'water?indicator =Water L';
 // ignore: prefer_interpolation_to_compose_strings
 final lastener = url + 'energy?indicator =Power W';
+// ignore: prefer_interpolation_to_compose_strings
+final level = url +    'level?indicator =Level';

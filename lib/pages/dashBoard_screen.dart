@@ -51,7 +51,7 @@ class HomePage extends StatelessWidget {
                           const SizedBox(height: 16,),
                           Row(
                             children: const [
-                              waterTankCard(),
+                              WaterTankCard(),
                              SizedBox(width: 16,),
                               generalControl()
                             ],
