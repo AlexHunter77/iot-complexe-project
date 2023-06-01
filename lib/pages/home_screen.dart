@@ -71,14 +71,14 @@ class _NavigationRailPageState extends State<NavigationRailPage> {
         children: <Widget>[
           if (!isSmallScreen)
             NavigationRail(
-              indicatorColor: Color(0xff005BE0),
+              indicatorColor: const Color(0xff005BE0),
               leading: Column(
                 children: [
 
-                  SizedBox(
+                  const SizedBox(
                     height:25),
                   Container(
-                    margin: EdgeInsets.only(bottom: 10),
+                    margin: const EdgeInsets.only(bottom: 10),
                     width: 50,
                     child: Center(child: Image.asset('assets/images/smart-house.png', scale: 10,))
                   ),
@@ -95,7 +95,7 @@ class _NavigationRailPageState extends State<NavigationRailPage> {
               minExtendedWidth: 200,
               destinations: _navBarItems
                   .map((item) => NavigationRailDestination(
-                    indicatorColor: Color(0xff005BE0),
+                      //indicatorColor:const  Color(0xff005BE0),
                       icon: item.icon,
                       selectedIcon: item.activeIcon,
                       label: Text(

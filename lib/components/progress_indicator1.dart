@@ -4,14 +4,14 @@ import 'package:percent_indicator/percent_indicator.dart';
 import 'package:http/http.dart' as http;
 import 'package:iot_project/pages/config.dart';
 
-class ProgressIndicatorWidget extends StatefulWidget {
-  const ProgressIndicatorWidget({Key? key}) : super(key: key);
+class ProgressIndicatorWidget1 extends StatefulWidget {
+  const ProgressIndicatorWidget1({Key? key}) : super(key: key);
 
   @override
-  _ProgressIndicatorWidgetState createState() => _ProgressIndicatorWidgetState();
+  _ProgressIndicatorWidgetState1 createState() => _ProgressIndicatorWidgetState1();
 }
 
-class _ProgressIndicatorWidgetState extends State<ProgressIndicatorWidget> {
+class _ProgressIndicatorWidgetState1 extends State<ProgressIndicatorWidget1> {
   Timer? _timer;
   String data = '';
 
@@ -41,7 +41,7 @@ class _ProgressIndicatorWidgetState extends State<ProgressIndicatorWidget> {
   Future<void> fetchData() async {
     
       const headers = {'Content-Type': 'application/json'};
-      final response = await http.get(Uri.parse(level) , headers: headers);
+      final response = await http.get(Uri.parse(level1) , headers: headers);
       if (response.statusCode == 200) {
         // Data retrieval was successful
         setState(() {

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:iot_project/components/progress_indicator.dart';
+import 'package:iot_project/components/progress_indicator1.dart';
 
 class WaterTankCard extends StatefulWidget {
   const WaterTankCard({Key? key}) : super(key: key);
@@ -38,7 +39,7 @@ class _WaterTankCardState extends State<WaterTankCard> {
               children: const [
                 Expanded(child: ProgressIndicatorWidget()),
                 SizedBox(width: 10),
-                Expanded(child: ProgressIndicatorWidget()),
+                Expanded(child: ProgressIndicatorWidget1()),
               ],
             ),
           ),

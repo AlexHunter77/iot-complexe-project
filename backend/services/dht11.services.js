@@ -1,4 +1,4 @@
-/*const DataModel = require('../models/dht11.model');
+const DataModel = require('../models/dht11.model');
 
 class DataServices {
   static async readDht() {
@@ -10,4 +10,4 @@ class DataServices {
   }
 }
 
-module.exports = DataServices;*/
+module.exports = DataServices;

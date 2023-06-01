@@ -6,7 +6,7 @@ final AnalyticInfo info ;
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(
+      padding: const EdgeInsets.symmetric(
         horizontal: 16,
         vertical: 10,
       ),
@@ -21,11 +21,11 @@ final AnalyticInfo info ;
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text('${info.title}',style: TextStyle(color: Colors.black54,
+              Text('${info.title}',style: const TextStyle(color: Colors.black54,
               fontWeight: FontWeight.w500,
               fontSize: 15),),
               Container(
-                padding: EdgeInsets.all(8),
+                padding:const  EdgeInsets.all(8),
                 height: 48,
                 width: 48,
                 decoration: BoxDecoration(color: info.color!.withOpacity(0.1),
@@ -35,7 +35,7 @@ final AnalyticInfo info ;
 
             ],
           ),
-          Text('${info.count}',style:TextStyle(
+          Text('${info.count}',style: const TextStyle(
             color: Colors.black,
             fontSize: 15,
             fontWeight: FontWeight.w600

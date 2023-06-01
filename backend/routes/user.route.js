@@ -7,8 +7,7 @@ const DeviceController = require('../controller/device.controller')
 
 
 router.post('/signin',UserController.login);
-//router.get('/device',DeviceController.getAllById)
-//router.get('/value', DeviceController.getValueByIndicator);
+
 //temp
 router.get('/temp', DeviceController.getValueByIndicatorLast);
 //gas
@@ -19,5 +18,7 @@ router.get('/water', DeviceController.getValueByIndicatorLast2);
 router.get('/energy', DeviceController.getValueByIndicatorLast3);
 //Level
 router.get('/level', DeviceController.getValueByIndicatorLast4);
+//Level1
+router.get('/level1', DeviceController.getValueByIndicatorLast5);
 module.exports = router;
 

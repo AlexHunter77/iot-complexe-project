@@ -15,3 +15,6 @@ final lastLit = url + 'water?indicator =Water L';
 final lastener = url + 'energy?indicator =Power W';
 // ignore: prefer_interpolation_to_compose_strings
 final level = url +    'level?indicator =Level';
+// ignore: prefer_interpolation_to_compose_strings
+final level1 = url +    'level1?indicator =Level1';
+
