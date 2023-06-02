@@ -1,7 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:iot_project/components/AnalyticInfoCard.dart';
-import 'package:iot_project/data/data.dart';
 import 'package:iot_project/Models/Analytic_info_model.dart';
 import 'package:http/http.dart' as http;
 import 'package:iot_project/pages/config.dart';
@@ -21,7 +20,6 @@ class _Analytic_cardsState extends State<Analytic_cards> {
   void initState() {
     super.initState();
     _pollingService = PollingService(onDataReceived: (data) {
-      // Update the widget state with the new data
       setState(() {});
     });
   }
@@ -52,11 +50,7 @@ class PollingService extends StatefulWidget {
 
 class _PollingServiceState extends State<PollingService> {
   Timer? _timer;
-  Timer? _tiimer;
   List _data = [];
-  List _data1 = [];
-  List _data2 = [];
-  List _data3 = [];
   String _response ='';
   String _response1 ='';
   String _response2 ='';
@@ -86,7 +80,6 @@ class _PollingServiceState extends State<PollingService> {
     _timer = null;
   }
   void _pollData() {
-    // Simulate data retrieval from an API
     _makeRequest();
     _makeRequest1();
     _makeRequest2();
@@ -117,13 +110,9 @@ class _PollingServiceState extends State<PollingService> {
     setState(() {
             _data = analyticData;
     });
-
-
-    // Call the onDataReceived callback function with the new data
     widget.onDataReceived(_data);
   }
   Future<void> _makeRequest() async {
-    // Replace this with the URL of the API you want to query
     final  url = lastTemp;  
     
     const headers = {'Content-Type': 'application/json'};
@@ -141,7 +130,6 @@ class _PollingServiceState extends State<PollingService> {
     }
    
 Future<void> _makeRequest1() async {
-    // Replace this with the URL of the API you want to query 
     const headers = {'Content-Type': 'application/json'};
     final response1 = await http.get(Uri.parse(lastGas), headers: headers);
     if (response1.statusCode == 200) {
@@ -155,7 +143,6 @@ Future<void> _makeRequest1() async {
     }
     }
     Future<void> _makeRequest2() async {
-    // Replace this with the URL of the API you want to query 
     const headers = {'Content-Type': 'application/json'};
     final response2 = await http.get(Uri.parse(lastLit), headers: headers);
     if (response2.statusCode == 200) {
