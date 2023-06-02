@@ -6,18 +6,26 @@ exports.getAllById = async (req, res) => {
   return res.send(result);
 };
 
-  exports.getValueByIndicatorLast = async (req, res) => {
-    const results = await device.find({ meteorological_indicator: 'Temperature Degree Centigrade (°C)' });
-    const value = results[4].value;
-    res.send(`${value}` + '   C°') ;
-
-
-    };
+exports.getValueByIndicatorLast = async (req, res) => {
+  const results = await device.find({ meteorological_indicator: 'Temperature Degree Centigrade (°C)' });
+  const values = results.map(result => result.value);
+  //res.send(`${values}`);
+ /* const min = 19.0;
+const max = 27.0;
+const random = Math.random();
+const newValue = random * (max - min) + min;*/
+const randomIndex = Math.floor(Math.random() * values.length);
+const newValue = values[randomIndex];
+  res.send(`${newValue}`+ '   C°');
+};
 
 exports.getValueByIndicatorLast1 = async (req, res) => {
   const results1 = await device.find({ meteorological_indicator: 'Gas m3' });
-  const value1 = results1[5].value;
-  res.send(`${value1}` + '   m3') ;
+  const value1 = results1.map(result => result.value);
+
+  const randomIndex = Math.floor(Math.random() * value1.length);
+  const newValue = value1[randomIndex];
+  res.send(`${newValue}` + '   m3') ;
   
 
 
@@ -51,7 +59,6 @@ exports.getValueByIndicatorLast1 = async (req, res) => {
         exports.getValueByIndicatorLast5 = async (req, res) => {
           const results = await device.find({ meteorological_indicator: 'Level11' });
           const values = results[1].value;
-          console.log(values);
           res.send(`${values}`) ;  
           
           };

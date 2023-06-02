@@ -37,6 +37,7 @@ class _Analytic_cardsState extends State<Analytic_cards> {
   void dispose() {
     super.dispose();
   }
+  
 }
 
 class PollingService extends StatefulWidget {
@@ -51,6 +52,7 @@ class PollingService extends StatefulWidget {
 
 class _PollingServiceState extends State<PollingService> {
   Timer? _timer;
+  Timer? _tiimer;
   List _data = [];
   List _data1 = [];
   List _data2 = [];
@@ -67,7 +69,6 @@ class _PollingServiceState extends State<PollingService> {
     _startTimer();
   }
 
-
   @override
   void dispose() {
     _stopTimer();
@@ -75,7 +76,7 @@ class _PollingServiceState extends State<PollingService> {
   }
 
   void _startTimer() {
-    _timer = Timer.periodic(const Duration(seconds: 0), (timer) {
+    _timer = Timer.periodic(const Duration(seconds: 10), (timer) {
       _pollData();
     });
   }
@@ -84,7 +85,6 @@ class _PollingServiceState extends State<PollingService> {
     _timer?.cancel();
     _timer = null;
   }
-
   void _pollData() {
     // Simulate data retrieval from an API
     _makeRequest();
@@ -116,35 +116,30 @@ class _PollingServiceState extends State<PollingService> {
 
     setState(() {
             _data = analyticData;
-            _data1 = analyticData;
-            _data2 = analyticData;
-            _data3 = analyticData;
-            
     });
 
 
     // Call the onDataReceived callback function with the new data
     widget.onDataReceived(_data);
-    widget.onDataReceived(_data1);
-    widget.onDataReceived(_data2);
-    widget.onDataReceived(_data3);
   }
   Future<void> _makeRequest() async {
     // Replace this with the URL of the API you want to query
     final  url = lastTemp;  
+    
     const headers = {'Content-Type': 'application/json'};
     final response = await http.get(Uri.parse(url), headers: headers);
     if (response.statusCode == 200) {
       setState(() {
-        _response = response.body;
+        _response = response.body;       
+        
       });
     } else {
       setState(() {
-        _response = 'Error: ${response.statusCode}';
+        _response1 = 'Error: ${response.statusCode}';
       });
     }
     }
-    
+   
 Future<void> _makeRequest1() async {
     // Replace this with the URL of the API you want to query 
     const headers = {'Content-Type': 'application/json'};
